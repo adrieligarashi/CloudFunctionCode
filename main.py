@@ -33,7 +33,6 @@ def top_3_from_hackernews():
     resposta = requests.get(url)
     sopa = BeautifulSoup(resposta.content, "html.parser")
 
-
     titulo = []
     titulos_html = sopa.find_all('a', class_='titlelink')
 
@@ -41,7 +40,7 @@ def top_3_from_hackernews():
         title = tit.string
         titulo.append(title)
 
-    return titulo[0:2]
+    return titulo[0:3]
 
 
 if __name__ == '__main__':
